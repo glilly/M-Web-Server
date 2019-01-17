@@ -1,4 +1,4 @@
-VPRJRSP ;SLC/KCM -- Handle HTTP Response;2018-10-22  9:11 AM
+VPRJRSP ;SLC/KCM -- Handle HTTP Response;2019-01-17  8:30 AM
  ;;1.0;JSON DATA STORE;;Sep 01, 2012
  ;
  ; -- prepare and send RESPONSE
@@ -18,8 +18,8 @@ RESPOND ; find entry point to handle request and call it
  N %WNULL S %WNULL=""
  I +$SY=47 S %WNULL="/dev/null"
  I $L($SY,":")=2 D
- . I $ZV(1)=2 s %WNULL="//./nul"
- . I $ZV(1)=3 s %WNULL="/dev/null"
+ . I $ZVERSION(1)=2 s %WNULL="//./nul"
+ . I $ZVERSION(1)=3 s %WNULL="/dev/null"
  I %WNULL="" S $EC=",U-OS-NOT-SUPPORTED,"
  O %WNULL U %WNULL
  N DYN
